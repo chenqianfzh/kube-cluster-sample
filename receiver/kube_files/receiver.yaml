@@ -56,11 +56,11 @@ spec:
         - containerPort: 8000
           hostPort: 8000
         args:
-          - --db-host=mysql.default.svc.cluster.local
+          - --db-host=mysql.face.svc.cluster.local
           - --db-username-password=$(MYSQL_USERPASSWORD)
           - --db-port=3306
           - --db-dbname=kube
-          - --producer-address=nsqd.default.svc.cluster.local:4150
+          - --producer-address=nsqd.face.svc.cluster.local:4150
         env:
         - name: MYSQL_USERPASSWORD
           valueFrom:
@@ -94,8 +94,8 @@ spec:
           hostPort: 4151
         env:
         - name: NSQLOOKUP_ADDRESS
-          value: nsqlookup.default.svc.cluster.local
+          value: nsqlookup.face.svc.cluster.local
         - name: NSQ_BROADCAST_ADDRESS
-          value: nsqd.default.svc.cluster.local
+          value: nsqd.face.svc.cluster.local
         command: ["/nsqd"]
         args: ["--lookupd-tcp-address=$(NSQLOOKUP_ADDRESS):4160", "--broadcast-address=$(NSQ_BROADCAST_ADDRESS)"]

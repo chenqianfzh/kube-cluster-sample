@@ -13,7 +13,7 @@ spec:
               image: skarlso/kube-redeemer:0.0.2
               env:
                 - name: MYSQL_CONNECTION
-                  value: "mysql.default.svc.cluster.local"
+                  value: "mysql.face.svc.cluster.local"
                 - name: MYSQL_USERPASSWORD
                   valueFrom:
                     secretKeyRef:
@@ -24,7 +24,7 @@ spec:
                 - name: MYSQL_DBNAME
                   value: kube
                 - name: PRODUCER_ADDRESS
-                  value: "nsqd.default.svc.cluster.local:4150"
+                  value: "nsqd.face.svc.cluster.local:4150"
           restartPolicy: OnFailure
 ---
 apiVersion: apps/v1
@@ -53,8 +53,8 @@ spec:
               hostPort: 4151
           env:
             - name: NSQLOOKUP_ADDRESS
-              value: nsqlookup.default.svc.cluster.local
+              value: nsqlookup.face.svc.cluster.local
             - name: NSQ_BROADCAST_ADDRESS
-              value: nsqd.default.svc.cluster.local
+              value: nsqd.face.svc.cluster.local
           command: ["/nsqd"]
           args: ["--lookupd-tcp-address=$(NSQLOOKUP_ADDRESS):4160", "--broadcast-address=$(NSQ_BROADCAST_ADDRESS)"]

@@ -35,7 +35,7 @@ spec:
         image: nsqio/nsq
         imagePullPolicy: Always
         command: ["/nsqlookupd"]
-        args: ["--broadcast-address=nsqlookup.default.svc.cluster.local"]
+        args: ["--broadcast-address=nsqlookup.face.svc.cluster.local"]
         ports:
         - containerPort: 4160
           hostPort: 4160

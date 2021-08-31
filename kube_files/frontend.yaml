@@ -29,7 +29,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: MYSQL_CONNECTION
-          value: "mysql.default.svc.cluster.local"
+          value: "mysql.face.svc.cluster.local"
         - name: MYSQL_USERPASSWORD
           valueFrom:
             secretKeyRef:

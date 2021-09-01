@@ -56,5 +56,4 @@ insert into person_images (image_name, person_id) values ('skarlso_2.jpg', 2);
 insert into person_images (image_name, person_id) values ('john_doe_1.jpg', 3);
 insert into person_images (image_name, person_id) values ('gergely_01.jpg', 4);
 insert into person_images (image_name, person_id) values ('audrey_1.jpg', 5);
-insert into person_images (image_name, person_id) values ('audrey_2.jpg', 5);
 insert into person_images (image_name, person_id) values ('taylor_1.jpg', 6);
